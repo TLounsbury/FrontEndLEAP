@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrls: new Map([
+    ["classA", "http://localhost:3021"],
+    ["classB", "http://localhost:3022"]
+  ])
 };
 
 /*
