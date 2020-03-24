@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  private currentLocation: string="Raleigh";
+  private locations: string[]=["Raleigh", "Durham"];
   constructor() { }
 
   ngOnInit() {
