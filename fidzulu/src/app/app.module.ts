@@ -20,6 +20,7 @@ import { ToyListComponent } from './toy-list/toy-list.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ToyListComponent,
     NavComponent,
     HomeComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

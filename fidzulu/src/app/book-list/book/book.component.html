@@ -1,1 +1,5 @@
-<p>book works!</p>
+<ul class="list-group">
+  <li  class="list-group-item">
+    <p *ngFor="let key in book" >{{key | titlecase}}: {{book[key]}}</p>
+  </li>
+</ul>

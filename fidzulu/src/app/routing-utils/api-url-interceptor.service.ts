@@ -30,10 +30,11 @@ export class ApiUrlInterceptorService implements HttpInterceptor {
 
   private injectTierUrl(url: string): string {
     url = url.slice(1);  // remove leading slash
-    const serviceName: string = url.split('/')[0];
+    const [serviceName, ...parts] = url.split('/');
     const tierName: string = this.routeMap.get(serviceName);
     const baseUrl: string = environment.apiUrls.get(tierName);
-    return `${baseUrl}/${tierName}/${url}`;
+    const joinedUrl: string = [baseUrl, tierName, serviceName, ...parts].join('/');
+    return joinedUrl;
   }
 
 }

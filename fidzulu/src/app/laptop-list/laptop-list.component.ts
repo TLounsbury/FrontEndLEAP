@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Laptop } from '../models/laptop';
+import { LaptopService } from './laptop.service';
+import { Team } from '../models/team';
 
 @Component({
   selector: 'app-laptop-list',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaptopListComponent implements OnInit {
 
-  constructor() { }
+  laptops$: Observable<Laptop[]>;
+  team$: Observable<Team>;
+
+  constructor(
+    private laptopService: LaptopService
+  ) { }
 
   ngOnInit() {
+    this.laptops$ = this.laptopService.getLaptops();
+    this.team$ = this.laptopService.getTeam();
   }
 
 }

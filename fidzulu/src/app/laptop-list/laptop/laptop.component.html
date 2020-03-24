@@ -1,1 +1,5 @@
-<p>laptop works!</p>
+<ul class="list-group">
+  <li  class="list-group-item">
+    <p *ngFor="let key in laptop" >{{key | titlecase}}: {{laptop[key]}}</p>
+  </li>
+</ul>
