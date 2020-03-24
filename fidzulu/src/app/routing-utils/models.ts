@@ -7,7 +7,7 @@ const middleTiers: MiddleTier[] = [
   {
     name: "classA",
     childRoutes: [
-      "bike",
+      "bikes",
       "food",
       "toys"
     ]

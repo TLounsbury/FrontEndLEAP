@@ -10,8 +10,8 @@
         </div>
         <ng-template #food>
           <app-food *ngFor="let foodItem of data.food" [foodItem]="foodItem"></app-food>
+          <div *ngIf="data.food.length === 0">No food found!</div>
         </ng-template>
-        <div *ngIf="data.food.length === 0">No food found!</div>
       </div>
       <div class="col-6">
         <div *ngIf="!data.team; else team">

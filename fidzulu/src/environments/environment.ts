@@ -7,7 +7,8 @@ export const environment = {
   apiUrls: new Map([
     ["classA", "http://localhost:3021"],
     ["classB", "http://localhost:3022"]
-  ])
+  ]),
+  defaultLocation: "Raleigh"
 };
 
 /*

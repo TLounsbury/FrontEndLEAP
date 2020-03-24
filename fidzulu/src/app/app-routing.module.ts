@@ -7,6 +7,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
 import { ToyListComponent } from './toy-list/toy-list.component';
+import { DvdListComponent } from './dvd-list/dvd-list.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'dvds',
-    component: BookListComponent
+    component: DvdListComponent
   },
   {
     path: 'food',

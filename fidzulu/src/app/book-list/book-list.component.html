@@ -10,8 +10,8 @@
         </div>
         <ng-template #books>
           <app-book *ngFor="let book of data.books" [book]="book"></app-book>
+          <div *ngIf="data.books.length === 0">No books found!</div>
         </ng-template>
-        <div *ngIf="data.books.length === 0">No books found!</div>
       </div>
       <div class="col-6">
         <div *ngIf="!data.team; else team">

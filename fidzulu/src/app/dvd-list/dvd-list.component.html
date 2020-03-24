@@ -10,8 +10,8 @@
         </div>
         <ng-template #dvds>
           <app-dvd *ngFor="let dvd of data.dvds" [dvd]="dvd"></app-dvd>
+          <div *ngIf="data.dvds.length === 0">No dvds found!</div>
         </ng-template>
-        <div *ngIf="data.dvds.length === 0">No dvds found!</div>
       </div>
       <div class="col-6">
         <div *ngIf="!data.team; else team">

@@ -10,8 +10,8 @@
         </div>
         <ng-template #toys>
           <app-toy *ngFor="let toy of data.toys" [toy]="toy"></app-toy>
+          <div *ngIf="data.toys.length === 0">No toys found!</div>
         </ng-template>
-        <div *ngIf="data.toys.length === 0">No toys found!</div>
       </div>
       <div class="col-6">
         <div *ngIf="!data.team; else team">

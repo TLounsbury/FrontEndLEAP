@@ -1,20 +1,35 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../routing-utils/api.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Bike } from '../models/bike';
 import { Team } from '../models/team';
+import { LocationService } from '../routing-utils/location.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BikeService {
+export class BikeService implements OnInit, OnDestroy {
+
+  private sub = new Subscription();
+  private location: string;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private locationService: LocationService
   ) { }
 
+  ngOnInit() {
+    this.sub.add(this.locationService.location$.subscribe(location => {
+      this.location = location;
+    }));
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
   getBikes(): Observable<Bike[]> {
-    return this.apiService.get(`/bikes/all/${location}`); // 'bikes' different than spec
+    return this.apiService.get(`/bikes/all/${this.location}`); // 'bikes' different than spec
   }
 
   getTeam(): Observable<Team> {
