@@ -8,7 +8,7 @@ import { LocationService } from '../routing-utils/location.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ToyService implements OnInit, OnDestroy {
+export class ToyService implements OnDestroy {
 
   private sub = new Subscription();
   private location: string;
@@ -16,9 +16,7 @@ export class ToyService implements OnInit, OnDestroy {
   constructor(
     private apiService: ApiService,
     private locationService: LocationService
-  ) { }
-
-  ngOnInit() {
+  ) {
     this.sub.add(this.locationService.location$.subscribe(location => {
       this.location = location;
     }));
