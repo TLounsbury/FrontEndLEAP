@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Toy } from '../models/toy';
+import { ToyService } from './toy.service';
+import { Team } from '../models/team';
 
 @Component({
   selector: 'app-toy-list',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToyListComponent implements OnInit {
 
-  constructor() { }
+  toys$: Observable<Toy[]>;
+  team$: Observable<Team>;
+
+  constructor(
+    private toyService: ToyService
+  ) { }
 
   ngOnInit() {
+    this.toys$ = this.toyService.getToys();
+    this.team$ = this.toyService.getTeam();
   }
 
 }

@@ -1,1 +1,4 @@
-<p>dvd works!</p>
+<ul class="list-group">
+  <li  class="list-group-item">
+    <p *ngFor="let key in dvd" >{{key | titlecase}}: {{dvd[key]}}</p>
+  </li></ul>
